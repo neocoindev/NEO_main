@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEO Pay - Инвестиционная презентация</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #F7F8FA;
+            overflow-x: hidden;
+        }
+
+        .presentation-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .slide {
+            background: white;
+            border-radius: 12px;
+            padding: 64px;
+            margin-bottom: 40px;
+            min-height: 600px;
+            box-shadow: 0 4px 20px rgba(10, 42, 90, 0.08);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #0A2A5A 0%, #00F5D4 100%);
+        }
+
+        .slide-number {
+            position: absolute;
+            top: 24px;
+            right: 32px;
+            font-size: 14px;
+            color: #6B7280;
+            font-weight: 500;
+        }
+
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 56px;
+            font-weight: 600;
+            color: #0A2A5A;
+            margin-bottom: 24px;
+            line-height: 1.2;
+            transition: all 0.4s ease;
+        }
+
+        h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36px;
+            font-weight: 600;
+            color: #1E488F;
+            margin-bottom: 32px;
+            line-height: 1.3;
+            transition: all 0.4s ease;
+        }
+
+        h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: #00F5D4;
+            margin-bottom: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .subtitle {
+            font-size: 20px;
+            color: #6B7280;
+            margin-bottom: 48px;
+            font-weight: 300;
+        }
+
+        .text-primary {
+            font-size: 18px;
+            color: #111827;
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .text-secondary {
+            font-size: 16px;
+            color: #6B7280;
+            line-height: 1.5;
+        }
+
+        /* Title Slide */
+        .title-slide {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, #0A2A5A 0%, #1E488F 100%);
+            color: white;
+        }
+
+        .title-slide h1 {
+            color: white;
+            font-size: 72px;
+            margin-bottom: 24px;
+        }
+
+        .title-slide .subtitle {
+            color: #D6E0F3;
+            font-size: 24px;
+            margin-bottom: 64px;
+        }
+
+        .company-info {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+            margin-top: 64px;
+            width: 100%;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 32px;
+            border-radius: 12px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .info-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .info-card h3 {
+            font-size: 36px;
+            margin-bottom: 8px;
+            color: white;
+        }
+
+        .info-card p {
+            color: #D6E0F3;
+            font-size: 16px;
+        }
+
+        /* Grid Layouts */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: start;
+        }
+
+        .three-column {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        /* Cards */
+        .card {
+            background: #F7F8FA;
+            padding: 32px;
+            border-radius: 12px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(10, 42, 90, 0.1);
+            border-color: #D6E0F3;
+        }
+
+        .card h4 {
+            font-size: 24px;
+            color: #0A2A5A;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+
+        .card p {
+            font-size: 16px;
+            color: #111827;
+            line-height: 1.5;
+        }
+
+        /* Ecosystem visualization */
+        .ecosystem-container {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            margin: 48px 0;
+        }
+
+        .ecosystem-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #0A2A5A 0%, #00F5D4 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 16px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(10, 42, 90, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .ecosystem-center:hover {
+            transform: translate(-50%, -50%) scale(1.05);
+        }
+
+        .ecosystem-company {
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            background: white;
+            border: 2px solid #D6E0F3;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            color: #0A2A5A;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .ecosystem-company:hover {
+            background: #1E488F;
+            color: white;
+            transform: scale(1.1);
+            border-color: #1E488F;
+        }
+
+        /* Financial Chart */
+        .chart-container {
+            margin: 48px 0;
+            background: #F7F8FA;
+            padding: 32px;
+            border-radius: 12px;
+        }
+
+        .growth-chart {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            height: 300px;
+            gap: 16px;
+        }
+
+        .chart-bar {
+            flex: 1;
+            background: linear-gradient(to top, #0A2A5A 0%, #00F5D4 100%);
+            border-radius: 8px 8px 0 0;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .chart-bar:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 24px rgba(0, 245, 212, 0.3);
+        }
+
+        .chart-label {
+            position: absolute;
+            bottom: -40px;
+            font-size: 14px;
+            color: #6B7280;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .chart-value {
+            color: white;
+            font-weight: 700;
+            font-size: 16px;
+            padding: 16px;
+            text-align: center;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin: 48px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #0A2A5A 0%, #1E488F 100%);
+            padding: 32px;
+            border-radius: 12px;
+            text-align: center;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 245, 212, 0.2);
+        }
+
+        .stat-card h3 {
+            font-size: 36px;
+            margin-bottom: 8px;
+            color: #00F5D4;
+        }
+
+        .stat-card p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        /* Bullet Points */
+        .bullet-list {
+            list-style: none;
+            margin: 32px 0;
+        }
+
+        .bullet-list li {
+            position: relative;
+            padding-left: 32px;
+            margin-bottom: 16px;
+            font-size: 18px;
+            color: #111827;
+            line-height: 1.6;
+            transition: all 0.2s ease;
+        }
+
+        .bullet-list li:hover {
+            color: #1E488F;
+            transform: translateX(4px);
+        }
+
+        .bullet-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 12px;
+            width: 8px;
+            height: 8px;
+            background: #00F5D4;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+        }
+
+        .bullet-list li:hover::before {
+            background: #1E488F;
+            transform: scale(1.2);
+        }
+
+        /* Navigation */
+        .nav-controls {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            display: flex;
+            gap: 16px;
+            z-index: 1000;
+        }
+
+        .nav-btn {
+            background: #0A2A5A;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            background: #1E488F;
+            transform: translateY(-2px);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInFromLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .animate-in {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .animate-in-left {
+            animation: slideInFromLeft 0.6s ease-out;
+        }
+
+        .animate-in-scale {
+            animation: fadeInScale 0.5s ease-out;
+        }
+
+        /* Print styles */
+        @media print {
+            .presentation-container {
+                padding: 0;
+            }
+            .slide {
+                page-break-after: always;
+                margin-bottom: 0;
+                box-shadow: none;
+            }
+            .nav-controls {
+                display: none;
+            }
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            margin: 48px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #D6E0F3;
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 48px;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            flex: 1;
+            background: #F7F8FA;
+            padding: 24px;
+            border-radius: 12px;
+            margin: 0 32px;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(10, 42, 90, 0.1);
+        }
+
+        .timeline-year {
+            font-size: 24px;
+            font-weight: 700;
+            color: #0A2A5A;
+            margin-bottom: 8px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 24px;
+            width: 16px;
+            height: 16px;
+            background: #00F5D4;
+            border: 4px solid white;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover .timeline-dot {
+            background: #1E488F;
+            transform: translateX(-50%) scale(1.2);
+        }
+
+        /* Table styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            transition: background-color 0.2s ease;
+        }
+
+        tbody tr:hover {
+            background-color: rgba(0, 245, 212, 0.05);
+        }
+
+        /* Additional minimal animations */
+        h1:hover, h2:hover, h3:hover {
+            color: #1E488F;
+        }
+
+        .card, .stat-card, .info-card {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .card:nth-child(1) { animation-delay: 0.1s; }
+        .card:nth-child(2) { animation-delay: 0.2s; }
+        .card:nth-child(3) { animation-delay: 0.3s; }
+
+        .stat-card:nth-child(1) { animation-delay: 0.1s; }
+        .stat-card:nth-child(2) { animation-delay: 0.2s; }
+        .stat-card:nth-child(3) { animation-delay: 0.3s; }
+        .stat-card:nth-child(4) { animation-delay: 0.4s; }
+    </style>
+</head>
+<body>
+    <div class="presentation-container">
+        <!-- Slide 1: Title -->
+        <div class="slide title-slide animate-in">
+            <h1>NEO Pay</h1>
+            <div class="subtitle">Международная система денежных переводов<br>Экосистема будущего глобальных финансов</div>
+            
+            <div class="company-info">
+                <div class="info-card">
+                    <h3>$6.5B</h3>
+                    <p>Целевая капитализация 2029</p>
+                </div>
+                <div class="info-card">
+                    <h3>33+</h3>
+                    <p>Компании в экосистеме</p>
+                </div>
+                <div class="info-card">
+                    <h3>2027</h3>
+                    <p>Год планируемого IPO</p>
+                </div>
+                <div class="info-card">
+                    <h3>ОАЭ</h3>
+                    <p>Основное расположение</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Problem Statement -->
+        <div class="slide animate-in">
+            <div class="slide-number">02</div>
+            <h2>Проблема рынка международных переводов</h2>
+            <div class="subtitle">Неэффективность традиционных систем затрагивает миллиарды людей</div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>$150B</h3>
+                    <p>Объём рынка 2025</p>
+                </div>
+                <div class="stat-card">
+                    <h3>3-7%</h3>
+                    <p>Средняя комиссия</p>
+                </div>
+                <div class="stat-card">
+                    <h3>3-7 дней</h3>
+                    <p>Время обработки</p>
+                </div>
+                <div class="stat-card">
+                    <h3>65%</h3>
+                    <p>Небанковское население</p>
+                </div>
+            </div>
+
+            <div class="two-column">
+                <div>
+                    <h4 style="color: #0A2A5A; margin-bottom: 24px; font-size: 24px;">Ключевые проблемы</h4>
+                    <ul class="bullet-list">
+                        <li>Высокие комиссии за международные переводы</li>
+                        <li>Долгое время обработки транзакций</li>
+                        <li>Ограниченное покрытие развивающихся рынков</li>
+                        <li>Сложные процедуры комплаенса</li>
+                        <li>Отсутствие интегрированных решений</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>Возможность NEO Pay</h4>
+                    <p class="text-primary">Глобальный рынок денежных переводов готов к трансформации. Мы предлагаем полную экосистему финтех-услуг, которая революционизирует способ международных переводов через интегрированную платформу из 33+ компаний.</p>
+                    <p class="text-secondary">Наше решение снижает комиссии до 0.5-2% и сокращает время перевода до нескольких секунд.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Solution Overview -->
+        <div class="slide animate-in">
+            <div class="slide-number">03</div>
+            <h2>NEO Pay: Экосистемное решение</h2>
+            <div class="subtitle">Революционный подход к международным денежным переводам</div>
+            
+            <div class="two-column">
+                <div>
+                    <h4 style="color: #0A2A5A; margin-bottom: 24px; font-size: 24px;">Наш подход</h4>
+                    <ul class="bullet-list">
+                        <li>Интегрированная экосистема из 33+ компаний</li>
+                        <li>Поддержка всех фиатных валют и криптовалют</li>
+                        <li>Безлимитные переводы 24/7</li>
+                        <li>Снижение комиссий на 60-80%</li>
+                        <li>Мгновенные международные переводы</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>Конкурентное преимущество</h4>
+                    <p class="text-primary">В отличие от традиционных служб денежных переводов, которые фокусируются на отдельных транзакциях, мы создаем комплексную экосистему, объединяющую все аспекты финансовых услуг.</p>
+                    <div style="margin-top: 24px;">
+                        <div style="background: #00F5D4; color: white; padding: 16px; border-radius: 8px; text-align: center; font-weight: 700;">
+                            Экономия 60-80% на комиссиях
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Market Size -->
+        <div class="slide animate-in">
+            <div class="slide-number">04</div>
+            <h2>Рыночная возможность</h2>
+            <div class="subtitle">Огромный адресуемый рынок с устойчивым ростом</div>
+            
+            <div class="chart-container">
+                <h4 style="color: #0A2A5A; margin-bottom: 32px; text-align: center;">Прогноз роста объёма транзакций NEO Pay</h4>
+                <div class="growth-chart">
+                    <div class="chart-bar" style="height: 15%;">
+                        <div class="chart-value">$200M</div>
+                        <div class="chart-label">2025</div>
+                    </div>
+                    <div class="chart-bar" style="height: 25%;">
+                        <div class="chart-value">$150B</div>
+                        <div class="chart-label">2026</div>
+                    </div>
+                    <div class="chart-bar" style="height: 40%;">
+                        <div class="chart-value">$600B</div>
+                        <div class="chart-label">2027</div>
+                    </div>
+                    <div class="chart-bar" style="height: 60%;">
+                        <div class="chart-value">$1T</div>
+                        <div class="chart-label">2028</div>
+                    </div>
+                    <div class="chart-bar" style="height: 100%;">
+                        <div class="chart-value">$3.5T</div>
+                        <div class="chart-label">2029</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="three-column" style="margin: 48px 0;">
+                <div class="card">
+                    <h4>TAM</h4>
+                    <h3 style="color: #0A2A5A;">$800B</h3>
+                    <p>Глобальный рынок денежных переводов</p>
+                </div>
+                <div class="card">
+                    <h4>Целевая доля</h4>
+                    <h3 style="color: #1E488F;">5%</h3>
+                    <p>Доля рынка к 2029 году</p>
+                </div>
+                <div class="card">
+                    <h4>Целевой объём</h4>
+                    <h3 style="color: #00F5D4;">$3.5T</h3>
+                    <p>Объём транзакций к 2029</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Ecosystem Visualization -->
+        <div class="slide animate-in">
+            <div class="slide-number">05</div>
+            <h2>Экосистема NEO</h2>
+            <div class="subtitle">33+ компании, создающие интегрированную финансовую экосистему</div>
+            
+            <div class="ecosystem-container">
+                <div class="ecosystem-center">NEO<br>Pay</div>
+                
+                <!-- Core Financial -->
+                <div class="ecosystem-company" style="top: 5%; left: 15%;">NEO Bit</div>
+                <div class="ecosystem-company" style="top: 5%; left: 85%;">NEO Exchange</div>
+                <div class="ecosystem-company" style="top: 45%; left: 3%;">NEO Wallet</div>
+                <div class="ecosystem-company" style="top: 45%; left: 92%;">NEO Bank</div>
+                <div class="ecosystem-company" style="top: 95%; left: 15%;">NEO P2P</div>
+                <div class="ecosystem-company" style="top: 95%; left: 85%;">NEO Chain</div>
+                
+                <!-- Digital Services -->
+                <div class="ecosystem-company" style="top: 12%; left: 35%;">NEO Chat</div>
+                <div class="ecosystem-company" style="top: 12%; left: 60%;">NEO Live</div>
+                <div class="ecosystem-company" style="top: 25%; left: 10%;">NEO Life</div>
+                <div class="ecosystem-company" style="top: 25%; left: 85%;">NEO Labs</div>
+                
+                <!-- Real Economy -->
+                <div class="ecosystem-company" style="top: 75%; left: 8%;">NEO Taxi</div>
+                <div class="ecosystem-company" style="top: 75%; left: 87%;">NEO Express</div>
+                <div class="ecosystem-company" style="top: 90%; left: 25%;">NEO Travel</div>
+                <div class="ecosystem-company" style="top: 90%; left: 70%;">NEO Club</div>
+                
+                <!-- Manufacturing & Retail -->
+                <div class="ecosystem-company" style="top: 18%; left: 75%;">NEO Energy</div>
+                <div class="ecosystem-company" style="top: 82%; left: 45%;">NEO Med</div>
+                <div class="ecosystem-company" style="top: 60%; left: 12%;">NEO Agro</div>
+                <div class="ecosystem-company" style="top: 60%; left: 83%;">NEO Motors</div>
+                
+                <!-- Additional Ecosystem Companies -->
+                <div class="ecosystem-company" style="top: 20%; left: 50%;">NEO Logy</div>
+                <div class="ecosystem-company" style="top: 30%; left: 25%;">NEO Center</div>
+                <div class="ecosystem-company" style="top: 30%; left: 75%;">NEO Bonus</div>
+                <div class="ecosystem-company" style="top: 50%; left: 25%;">NEO Vita</div>
+                <div class="ecosystem-company" style="top: 50%; left: 70%;">NEO Milk</div>
+                <div class="ecosystem-company" style="top: 70%; left: 25%;">NEO Text</div>
+                <div class="ecosystem-company" style="top: 70%; left: 75%;">NEO Choco</div>
+                <div class="ecosystem-company" style="top: 85%; left: 45%;">NEO Park</div>
+                <div class="ecosystem-company" style="top: 15%; left: 45%;">NEO Resort</div>
+                <div class="ecosystem-company" style="top: 5%; left: 50%;">NEO Film</div>
+                <div class="ecosystem-company" style="top: 95%; left: 50%;">NEO Const</div>
+                <div class="ecosystem-company" style="top: 40%; left: 5%;">NEO and Co</div>
+            </div>
+
+            <div style="text-align: center; margin-top: 48px;">
+                <p class="text-primary">Полная экосистема финансовых услуг: от переводов до кастодиальных решений</p>
+            </div>
+        </div>
+
+        <!-- Slide 6: Financial Projections -->
+        <div class="slide animate-in">
+            <div class="slide-number">06</div>
+            <h2>Финансовые прогнозы</h2>
+            <div class="subtitle">Агрессивная траектория роста до IPO 2027</div>
+            
+            <div class="chart-container">
+                <h4 style="color: #0A2A5A; margin-bottom: 32px; text-align: center;">Прогноз капитализации</h4>
+                <div class="growth-chart">
+                    <div class="chart-bar" style="height: 8%;">
+                        <div class="chart-value">$50M</div>
+                        <div class="chart-label">2025</div>
+                    </div>
+                    <div class="chart-bar" style="height: 20%;">
+                        <div class="chart-value">$650M</div>
+                        <div class="chart-label">2026</div>
+                    </div>
+                    <div class="chart-bar" style="height: 35%;">
+                        <div class="chart-value">$1.5B</div>
+                        <div class="chart-label">2027 IPO</div>
+                    </div>
+                    <div class="chart-bar" style="height: 55%;">
+                        <div class="chart-value">$3B</div>
+                        <div class="chart-label">2028</div>
+                    </div>
+                    <div class="chart-bar" style="height: 100%;">
+                        <div class="chart-value">$6.5B</div>
+                        <div class="chart-label">2029</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="two-column" style="margin-top: 64px;">
+                <div>
+                    <h4 style="color: #0A2A5A; margin-bottom: 24px;">Ключевые метрики</h4>
+                    <ul class="bullet-list">
+                        <li>Рост капитализации: 13,000% за 4 года</li>
+                        <li>Объём транзакций: $200M → $3.5T</li>
+                        <li>Охват стран: 100+</li>
+                        <li>Клиенты: 500M+ индивидуальных, 200K+ корпоративных</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>Путь к IPO 2027</h4>
+                    <p class="text-primary">Компания демонстрирует исключительные темпы роста с прогнозом капитализации $1.5B к моменту IPO в 2027 году. Ожидаемый рост выручки с $10M до $500M+ к 2027 году.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Global Coverage -->
+        <div class="slide animate-in">
+            <div class="slide-number">07</div>
+            <h2>Глобальное покрытие</h2>
+            <div class="subtitle">Беспрецедентный охват рынков</div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>100+</h3>
+                    <p>Стран обслуживания</p>
+                </div>
+                <div class="stat-card">
+                    <h3>30,000+</h3>
+                    <p>Отделений в СНГ</p>
+                </div>
+                <div class="stat-card">
+                    <h3>500,000+</h3>
+                    <p>Пунктов обслуживания</p>
+                </div>
+                <div class="stat-card">
+                    <h3>500M+</h3>
+                    <p>Потенциальных клиентов</p>
+                </div>
+            </div>
+
+            <div class="three-column" style="margin: 48px 0;">
+                <div class="card">
+                    <h4>Индивидуальные клиенты</h4>
+                    <h3 style="color: #0A2A5A;">500M+</h3>
+                    <p>Физические лица, нуждающиеся в международных переводах</p>
+                </div>
+                <div class="card">
+                    <h4>Корпоративные клиенты</h4>
+                    <h3 style="color: #1E488F;">200K+</h3>
+                    <p>Малый и средний бизнес, международные компании</p>
+                </div>
+                <div class="card">
+                    <h4>Финансовые учреждения</h4>
+                    <h3 style="color: #00F5D4;">1000+</h3>
+                    <p>Банки, платёжные системы, финтех-компании</p>
+                </div>
+            </div>
+
+            <div class="two-column">
+                <div>
+                    <h4 style="color: #0A2A5A; margin-bottom: 24px;">Ключевые преимущества</h4>
+                    <ul class="bullet-list">
+                        <li>Регистрация в ОАЭ - международный финансовый центр</li>
+                        <li>Соответствие международным стандартам</li>
+                        <li>Многоязычная поддержка</li>
+                        <li>Круглосуточная обработка транзакций</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>Технические возможности</h4>
+                    <p class="text-primary">Безлимитные переводы по объёму 24/7, поддержка всех фиатных валют мира, популярных криптовалют и цифровых облигаций.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Shareholders -->
+        <div class="slide animate-in">
+            <div class="slide-number">08</div>
+            <h2>Акционеры и партнёры</h2>
+            <div class="subtitle">Сильная основа с международными партнёрами</div>
+            
+            <div class="two-column">
+                <div>
+                    <h4 style="color: #0A2A5A; margin-bottom: 24px;">Действующие акционеры</h4>
+                    <ul class="bullet-list">
+                        <li>NEO Fund (основатель)</li>
+                        <li>NEO Bit (криптовалютная биржа)</li>
+                        <li>NEO Exchange (криптообменник)</li>
+                        <li>NEO Wallet (цифровой кошелёк)</li>
+                        <li>NEO Life (собственная криптовалюта)</li>
+                        <li>NEO Bank (банковские услуги)</li>
+                        <li>NEO Chat (мессенджер)</li>
+                        <li>NEO Live (социальная сеть)</li>
+                        <li>NEO Chain (блокчейн-платформа)</li>
+                        <li>+ 24 других компании экосистемы</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: #0A2A5A; margin-bottom: 24px;">С 2026 года присоединяются</h4>
+                    <ul class="bullet-list">
+                        <li>Zand Bank (международный банк)</li>
+                        <li>Mashrek (региональный банк)</li>
+                        <li>Muamalat Bank (исламский банк)</li>
+                        <li>Black Rock (крупнейший инвестиционный фонд)</li>
+                        <li>Pictet Group (частный банк Швейцарии)</li>
+                        <li>+ потенциальные стратегические инвесторы</li>
+                    </ul>
+                    <div style="background: #F7F8FA; padding: 24px; border-radius: 8px; margin-top: 24px;">
+                        <h4 style="color: #0A2A5A; margin-bottom: 8px;">Стратегическое партнёрство</h4>
+                        <p class="text-secondary">Привлечение крупнейших международных банков и инвестиционных фондов обеспечивает устойчивую базу для глобальной экспансии</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Technology Platform -->
+        <div class="slide animate-in">
+            <div class="slide-number">09</div>
+            <h2>Технологическая платформа</h2>
+            <div class="subtitle">Масштабируемая и безопасная инфраструктура</div>
+            
+            <div class="two-column">
+                <div>
+                    <h4 style="color: #0A2A5A; margin-bottom: 24px;">Основные технологии</h4>
+                    <ul class="bullet-list">
+                        <li>Блокчейн-платформа NEO Chain</li>
+                        <li>Архитектура микросервисов</li>
+                        <li>Система расчётов в реальном времени</li>
+                        <li>ИИ-обнаружение мошенничества</li>
+                        <li>Масштабирование в облаке</li>
+                        <li>API для интеграции с банками</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: #0A2A5A; margin-bottom: 24px;">Безопасность и соответствие</h4>
+                    <ul class="bullet-list">
+                        <li>Международные стандарты KYC/AML</li>
+                        <li>GDPR для европейских клиентов</li>
+                        <li>PCI DSS для платёжных данных</li>
+                        <li>Регулирование криптовалют</li>
+                        <li>Многоуровневая система безопасности</li>
+                        <li>Автоматизированный комплаенс</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="margin-top: 48px;">
+                <div class="stats-grid" style="grid-template-columns: repeat(4, 1fr);">
+                    <div class="stat-card">
+                        <h3>99.9%</h3>
+                        <p>Доступность системы</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>< 1 мин</h3>
+                        <p>Время перевода</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>0.5-2%</h3>
+                        <p>Размер комиссии</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>24/7</h3>
+                        <p>Поддержка клиентов</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 10: Investment Opportunity -->
+        <div class="slide animate-in">
+            <div class="slide-number">10</div>
+            <h2>Инвестиционная возможность</h2>
+            <div class="subtitle">Ранний этап с исключительным потенциалом</div>
+            
+            <div style="text-align: center; margin: 64px 0;">
+                <div style="background: linear-gradient(135deg, #0A2A5A 0%, #00F5D4 100%); color: white; padding: 48px; border-radius: 16px; margin-bottom: 48px;">
+                    <h3 style="color: white; font-size: 48px; margin-bottom: 16px;">Привлечение раунда A</h3>
+                    <p style="font-size: 24px; margin-bottom: 32px;">$20M для масштабирования в 50+ стран</p>
+                    
+                    <div class="three-column" style="margin-top: 32px;">
+                        <div>
+                            <div style="font-size: 36px; font-weight: 700; margin-bottom: 8px;">3000%</div>
+                            <p>Потенциальная доходность до 2027</p>
+                        </div>
+                        <div>
+                            <div style="font-size: 36px; font-weight: 700; margin-bottom: 8px;">$1.5B</div>
+                            <p>Оценка к IPO 2027</p>
+                        </div>
+                        <div>
+                            <div style="font-size: 36px; font-weight: 700; margin-bottom: 8px;">33+</div>
+                            <p>Компании экосистемы</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="two-column">
+                    <div class="card">
+                        <h4>Что мы привлекаем</h4>
+                        <ul class="bullet-list">
+                            <li>$20M акционного финансирования</li>
+                            <li>15-20% доля в акциях</li>
+                            <li>$100M предварительная оценка</li>
+                            <li>Место в совете директоров</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4>Использование средств</h4>
+                        <ul class="bullet-list">
+                            <li>40% - Технологии и разработка</li>
+                            <li>30% - Маркетинг и привлечение клиентов</li>
+                            <li>20% - Команда и эксперты</li>
+                            <li>10% - Комплаенс и лицензирование</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: #F7F8FA; padding: 32px; border-radius: 12px; text-align: center;">
+                <h4 style="color: #0A2A5A; margin-bottom: 16px;">Следующие шаги</h4>
+                <p class="text-primary">Запланируйте встречу с нашей командой для обсуждения деталей инвестиционного предложения</p>
+                <div style="margin-top: 24px;">
+                    <p style="font-size: 18px; color: #1E488F; font-weight: 600;">NEO Fund | ОАЭ, Дубай</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 11: Contact Information -->
+        <div class="slide animate-in">
+            <div class="slide-number">11</div>
+            <h2>Контакты и следующие шаги</h2>
+            <div class="subtitle">Обсудим ваше участие в будущем глобальных финансов</div>
+            
+            <div class="two-column">
+                <div>
+                    <h4 style="color: #0A2A5A; margin-bottom: 24px;">Инвестиционные запросы</h4>
+                    <div class="card">
+                        <h4>Основатель</h4>
+                        <p class="text-primary" style="color: #1E488F; font-size: 20px;">NEO Fund</p>
+                        <p class="text-secondary">ОАЭ, Дубай</p>
+                    </div>
+                    <div class="card" style="margin-top: 16px;">
+                        <h4>Управляющая компания</h4>
+                        <p class="text-primary" style="color: #1E488F; font-size: 20px;">NEO and Co</p>
+                        <p class="text-secondary">Корпоративное управление</p>
+                    </div>
+                    <div class="card" style="margin-top: 16px;">
+                        <h4>Листинг на бирже</h4>
+                        <p class="text-primary" style="color: #1E488F; font-size: 20px;">2027 год</p>
+                        <p class="text-secondary">Целевая капитализация $1.5B</p>
+                    </div>
+                </div>
+                <div>
+                    <h4 style="color: #0A2A5A; margin-bottom: 24px;">Дополнительные материалы</h4>
+                    <div style="background: #F7F8FA; padding: 32px; border-radius: 12px;">
+                        <ul class="bullet-list">
+                            <li>Детальная финансовая модель</li>
+                            <li>Техническая документация</li>
+                            <li>Анализ конкурентов</li>
+                            <li>План развития до IPO 2027</li>
+                            <li>Юридическая документация</li>
+                            <li>Отчёты по рыночным исследованиям</li>
+                        </ul>
+                    </div>
+                    <div style="background: linear-gradient(135deg, #00F5D4 0%, #059669 100%); color: white; padding: 24px; border-radius: 12px; margin-top: 24px; text-align: center;">
+                        <h4 style="color: white; margin-bottom: 8px;">Революция в глобальных финансах</h4>
+                        <p style="font-size: 18px; font-weight: 600;">Присоединяйтесь к экосистеме будущего</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 64px; text-align: center; background: linear-gradient(135deg, #0A2A5A 0%, #1E488F 100%); color: white; padding: 48px; border-radius: 16px;">
+                <h3 style="color: white; font-size: 48px; margin-bottom: 16px;">NEO Pay</h3>
+                <p style="font-size: 24px; margin-bottom: 32px;">Будущее международных переводов начинается сегодня</p>
+                <p style="font-size: 18px; opacity: 0.9;">Международная система денежных переводов NEO Pay - Объединяем мировые экономики</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="nav-controls">
+        <button class="nav-btn" onclick="window.print()">Печать слайдов</button>
+        <button class="nav-btn" onclick="scrollToTop()">Наверх</button>
+    </div>
+
+    <script>
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.slide').forEach(slide => {
+            observer.observe(slide);
+        });
+
+        // Navigation functions
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Ecosystem interaction
+        document.querySelectorAll('.ecosystem-company').forEach(company => {
+            company.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.1)';
+            });
+            
+            company.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+
+        // Staggered animation for cards
+        document.querySelectorAll('.card').forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.1}s`;
+        });
+
+        // Add hover effect to chart bars
+        document.querySelectorAll('.chart-bar').forEach(bar => {
+            bar.addEventListener('mouseenter', function() {
+                this.style.opacity = '0.8';
+            });
+            
+            bar.addEventListener('mouseleave', function() {
+                this.style.opacity = '1';
+            });
+        });
+
+        // Enhanced navigation with keyboard
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowDown' || e.key === 'PageDown') {
+                window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
+            } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
+                window.scrollBy({ top: -window.innerHeight, behavior: 'smooth' });
+            }
+        });
+
+        // Print optimization
+        window.addEventListener('beforeprint', function() {
+            document.body.style.background = 'white';
+        });
+
+        window.addEventListener('afterprint', function() {
+            document.body.style.background = '#F7F8FA';
+        });
+
+        // Subtle parallax effect for title slide
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const titleSlide = document.querySelector('.title-slide');
+            if (titleSlide) {
+                const rate = scrolled * -0.5;
+                titleSlide.style.transform = `translateY(${rate}px)`;
+            }
+        });
+
+        // Add smooth transition to all interactive elements
+        document.querySelectorAll('.card, .stat-card, .info-card').forEach(element => {
+            element.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+        });
+    </script>
+</body>
+</html>
