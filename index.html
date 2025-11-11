@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEO Pay - Инвестиционная презентация</title>
+    <title>NEO Stream - Адаптивная презентация</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -454,6 +454,658 @@
             animation: fadeInScale 0.5s ease-out;
         }
 
+        /* Responsive Design */
+        
+        /* Large Desktop (1440px and up) */
+        @media (min-width: 1440px) {
+            .presentation-container {
+                max-width: 1400px;
+                padding: 40px;
+            }
+            
+            .slide {
+                padding: 80px;
+                min-height: 700px;
+            }
+            
+            h1 { font-size: 64px; }
+            h2 { font-size: 42px; }
+            h3 { font-size: 52px; }
+            
+            .title-slide h1 { font-size: 80px; }
+            .title-slide .subtitle { font-size: 28px; }
+            
+            .company-info {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 40px;
+            }
+            
+            .two-column {
+                gap: 80px;
+            }
+            
+            .three-column {
+                gap: 40px;
+            }
+        }
+
+        /* Desktop (1024px to 1439px) */
+        @media (min-width: 1024px) and (max-width: 1439px) {
+            .presentation-container {
+                max-width: 1200px;
+                padding: 30px;
+            }
+            
+            .slide {
+                padding: 64px;
+                min-height: 600px;
+            }
+        }
+
+        /* Large Tablets (768px to 1023px) */
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .presentation-container {
+                max-width: 100%;
+                padding: 20px;
+            }
+            
+            .slide {
+                padding: 48px;
+                min-height: 500px;
+                margin-bottom: 32px;
+            }
+            
+            h1 { font-size: 48px; }
+            h2 { font-size: 32px; }
+            h3 { font-size: 40px; }
+            
+            .title-slide h1 { font-size: 64px; }
+            .title-slide .subtitle { font-size: 24px; }
+            
+            .company-info {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+                margin-top: 48px;
+            }
+            
+            .info-card {
+                padding: 24px;
+            }
+            
+            .info-card h3 {
+                font-size: 32px;
+            }
+            
+            .two-column {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            
+            .three-column {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            
+            .ecosystem-container {
+                height: 400px;
+            }
+            
+            .ecosystem-center {
+                width: 100px;
+                height: 100px;
+                font-size: 14px;
+            }
+            
+            .ecosystem-company {
+                width: 60px;
+                height: 60px;
+                font-size: 9px;
+            }
+            
+            .nav-controls {
+                bottom: 20px;
+                right: 20px;
+                gap: 12px;
+            }
+            
+            .nav-btn {
+                padding: 10px 20px;
+                font-size: 13px;
+            }
+        }
+
+        /* Small Tablets and Large Phones (480px to 767px) */
+        @media (min-width: 480px) and (max-width: 767px) {
+            .presentation-container {
+                max-width: 100%;
+                padding: 16px;
+            }
+            
+            .slide {
+                padding: 32px;
+                min-height: 450px;
+                margin-bottom: 24px;
+            }
+            
+            h1 { font-size: 40px; }
+            h2 { font-size: 28px; }
+            h3 { font-size: 36px; }
+            
+            .title-slide {
+                padding: 48px 32px;
+            }
+            
+            .title-slide h1 { 
+                font-size: 48px; 
+                margin-bottom: 16px;
+            }
+            
+            .title-slide .subtitle { 
+                font-size: 20px; 
+                margin-bottom: 48px;
+            }
+            
+            .company-info {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                margin-top: 32px;
+            }
+            
+            .info-card {
+                padding: 20px;
+            }
+            
+            .info-card h3 {
+                font-size: 28px;
+            }
+            
+            .info-card p {
+                font-size: 14px;
+            }
+            
+            .two-column {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            
+            .three-column {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+                margin: 32px 0;
+            }
+            
+            .stat-card {
+                padding: 24px;
+            }
+            
+            .stat-card h3 {
+                font-size: 28px;
+            }
+            
+            .stat-card p {
+                font-size: 13px;
+            }
+            
+            .card {
+                padding: 24px;
+            }
+            
+            .card h4 {
+                font-size: 20px;
+            }
+            
+            .card p {
+                font-size: 15px;
+            }
+            
+            .bullet-list li {
+                font-size: 16px;
+                padding-left: 24px;
+                margin-bottom: 12px;
+            }
+            
+            .bullet-list li::before {
+                width: 6px;
+                height: 6px;
+                top: 10px;
+            }
+            
+            .chart-container {
+                padding: 24px;
+                margin: 32px 0;
+            }
+            
+            .growth-chart {
+                height: 250px;
+                gap: 12px;
+            }
+            
+            .chart-value {
+                font-size: 14px;
+                padding: 12px;
+            }
+            
+            .chart-label {
+                font-size: 12px;
+                bottom: -32px;
+            }
+            
+            .ecosystem-container {
+                height: 350px;
+                margin: 32px 0;
+            }
+            
+            .ecosystem-center {
+                width: 80px;
+                height: 80px;
+                font-size: 12px;
+            }
+            
+            .ecosystem-company {
+                width: 50px;
+                height: 50px;
+                font-size: 8px;
+            }
+            
+            .timeline {
+                margin: 32px 0;
+            }
+            
+            .timeline-item {
+                margin-bottom: 32px;
+            }
+            
+            .timeline-content {
+                margin: 0 20px;
+                padding: 20px;
+            }
+            
+            .timeline-year {
+                font-size: 20px;
+            }
+            
+            .nav-controls {
+                bottom: 16px;
+                right: 16px;
+                gap: 8px;
+            }
+            
+            .nav-btn {
+                padding: 8px 16px;
+                font-size: 12px;
+                min-width: 80px;
+            }
+        }
+
+        /* Mobile Phones (320px to 479px) */
+        @media (max-width: 479px) {
+            .presentation-container {
+                max-width: 100%;
+                padding: 12px;
+            }
+            
+            .slide {
+                padding: 24px;
+                min-height: 400px;
+                margin-bottom: 20px;
+            }
+            
+            .slide-number {
+                top: 16px;
+                right: 20px;
+                font-size: 12px;
+            }
+            
+            h1 { font-size: 32px; }
+            h2 { font-size: 24px; }
+            h3 { font-size: 28px; }
+            
+            .subtitle {
+                font-size: 16px;
+                margin-bottom: 32px;
+            }
+            
+            .text-primary {
+                font-size: 16px;
+                margin-bottom: 20px;
+            }
+            
+            .text-secondary {
+                font-size: 14px;
+            }
+            
+            .title-slide {
+                padding: 32px 20px;
+            }
+            
+            .title-slide h1 { 
+                font-size: 36px; 
+                margin-bottom: 16px;
+                line-height: 1.1;
+            }
+            
+            .title-slide .subtitle { 
+                font-size: 18px; 
+                margin-bottom: 32px;
+                line-height: 1.3;
+            }
+            
+            .company-info {
+                grid-template-columns: 1fr;
+                gap: 16px;
+                margin-top: 24px;
+            }
+            
+            .info-card {
+                padding: 16px;
+            }
+            
+            .info-card h3 {
+                font-size: 24px;
+            }
+            
+            .info-card p {
+                font-size: 13px;
+            }
+            
+            .two-column {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .three-column {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+                margin: 24px 0;
+            }
+            
+            .stat-card {
+                padding: 20px;
+            }
+            
+            .stat-card h3 {
+                font-size: 24px;
+            }
+            
+            .stat-card p {
+                font-size: 12px;
+            }
+            
+            .card {
+                padding: 20px;
+            }
+            
+            .card h4 {
+                font-size: 18px;
+                margin-bottom: 12px;
+            }
+            
+            .card p {
+                font-size: 14px;
+            }
+            
+            .bullet-list {
+                margin: 20px 0;
+            }
+            
+            .bullet-list li {
+                font-size: 15px;
+                padding-left: 20px;
+                margin-bottom: 10px;
+                line-height: 1.4;
+            }
+            
+            .bullet-list li::before {
+                width: 6px;
+                height: 6px;
+                top: 8px;
+            }
+            
+            .chart-container {
+                padding: 20px;
+                margin: 24px 0;
+            }
+            
+            .growth-chart {
+                height: 200px;
+                gap: 8px;
+            }
+            
+            .chart-bar {
+                border-radius: 6px 6px 0 0;
+            }
+            
+            .chart-value {
+                font-size: 12px;
+                padding: 8px;
+            }
+            
+            .chart-label {
+                font-size: 11px;
+                bottom: -24px;
+            }
+            
+            .ecosystem-container {
+                height: 300px;
+                margin: 20px 0;
+            }
+            
+            .ecosystem-center {
+                width: 60px;
+                height: 60px;
+                font-size: 10px;
+            }
+            
+            .ecosystem-company {
+                width: 40px;
+                height: 40px;
+                font-size: 7px;
+            }
+            
+            .timeline {
+                margin: 24px 0;
+            }
+            
+            .timeline::before {
+                left: 20px;
+                transform: none;
+            }
+            
+            .timeline-item {
+                flex-direction: column !important;
+                margin-bottom: 24px;
+                padding-left: 40px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                flex-direction: column !important;
+            }
+            
+            .timeline-content {
+                margin: 0;
+                margin-top: 20px;
+                padding: 16px;
+            }
+            
+            .timeline-dot {
+                left: 20px;
+                top: 16px;
+                transform: none;
+                width: 12px;
+                height: 12px;
+            }
+            
+            .timeline-year {
+                font-size: 18px;
+            }
+            
+            .nav-controls {
+                bottom: 12px;
+                right: 12px;
+                gap: 6px;
+                flex-direction: column;
+            }
+            
+            .nav-btn {
+                padding: 8px 12px;
+                font-size: 11px;
+                min-width: 90px;
+            }
+        }
+
+        /* Touch device optimizations */
+        @media (hover: none) and (pointer: coarse) {
+            .card:hover, .stat-card:hover, .info-card:hover {
+                transform: none;
+            }
+            
+            .chart-bar:hover {
+                transform: none;
+            }
+            
+            .ecosystem-company:hover {
+                transform: none;
+            }
+            
+            .ecosystem-company:active {
+                transform: scale(0.95);
+                background: #1E488F;
+                color: white;
+                border-color: #1E488F;
+            }
+            
+            /* Improve touch targets */
+            .card, .stat-card, .info-card, .nav-btn, .chart-bar, .ecosystem-company {
+                min-height: 44px;
+                min-width: 44px;
+            }
+            
+            /* Better text readability on small screens */
+            .subtitle, .text-primary, .text-secondary {
+                text-rendering: optimizeLegibility;
+            }
+            
+            /* Optimize animations for touch */
+            .animate-in {
+                animation-duration: 0.3s;
+            }
+        }
+        
+        /* Landscape mobile optimization */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .presentation-container {
+                padding: 8px;
+            }
+            
+            .slide {
+                padding: 16px;
+                min-height: 100vh;
+                margin-bottom: 16px;
+            }
+            
+            .title-slide {
+                padding: 16px;
+                min-height: 100vh;
+            }
+            
+            .company-info {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+                margin-top: 16px;
+            }
+            
+            .info-card {
+                padding: 12px;
+            }
+            
+            .info-card h3 {
+                font-size: 20px;
+            }
+            
+            h1 { font-size: 24px; }
+            h2 { font-size: 20px; }
+            h3 { font-size: 22px; }
+            
+            .subtitle {
+                font-size: 14px;
+                margin-bottom: 16px;
+            }
+            
+            .text-primary {
+                font-size: 14px;
+                margin-bottom: 12px;
+            }
+            
+            .two-column, .three-column {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            
+            .bullet-list li {
+                font-size: 14px;
+                margin-bottom: 8px;
+            }
+            
+            .nav-controls {
+                bottom: 8px;
+                right: 8px;
+                flex-direction: row;
+            }
+        }
+        
+        /* High DPI displays */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .slide {
+                box-shadow: 0 2px 10px rgba(10, 42, 90, 0.08);
+            }
+            
+            .card, .stat-card, .info-card {
+                box-shadow: 0 2px 12px rgba(10, 42, 90, 0.1);
+            }
+        }
+        
+        /* Accessibility improvements */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            
+            .animate-in {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        }
+        
+        /* Focus styles for accessibility */
+        @media (hover: none) and (pointer: coarse) {
+            .nav-btn:focus {
+                outline: 2px solid #00F5D4;
+                outline-offset: 2px;
+            }
+            
+            .card:focus {
+                outline: 2px solid #1E488F;
+                outline-offset: 2px;
+            }
+        }
+
         /* Print styles */
         @media print {
             .presentation-container {
@@ -579,7 +1231,7 @@
     <div class="presentation-container">
         <!-- Slide 1: Title -->
         <div class="slide title-slide animate-in">
-            <h1>NEO Pay</h1>
+            <h1>NEO Stream</h1>
             <div class="subtitle">Международная система денежных переводов<br>Экосистема будущего глобальных финансов</div>
             
             <div class="company-info">
@@ -639,7 +1291,7 @@
                     </ul>
                 </div>
                 <div class="card">
-                    <h4>Возможность NEO Pay</h4>
+                    <h4>Возможность NEO Stream</h4>
                     <p class="text-primary">Глобальный рынок денежных переводов готов к трансформации. Мы предлагаем полную экосистему финтех-услуг, которая революционизирует способ международных переводов через интегрированную платформу из 33+ компаний.</p>
                     <p class="text-secondary">Наше решение снижает комиссии до 0.5-2% и сокращает время перевода до нескольких секунд.</p>
                 </div>
@@ -649,7 +1301,7 @@
         <!-- Slide 3: Solution Overview -->
         <div class="slide animate-in">
             <div class="slide-number">03</div>
-            <h2>NEO Pay: Экосистемное решение</h2>
+            <h2>NEO Stream: Экосистемное решение</h2>
             <div class="subtitle">Революционный подход к международным денежным переводам</div>
             
             <div class="two-column">
@@ -682,7 +1334,7 @@
             <div class="subtitle">Огромный адресуемый рынок с устойчивым ростом</div>
             
             <div class="chart-container">
-                <h4 style="color: #0A2A5A; margin-bottom: 32px; text-align: center;">Прогноз роста объёма транзакций NEO Pay</h4>
+                <h4 style="color: #0A2A5A; margin-bottom: 32px; text-align: center;">Прогноз роста объёма транзакций NEO Stream</h4>
                 <div class="growth-chart">
                     <div class="chart-bar" style="height: 15%;">
                         <div class="chart-value">$200M</div>
@@ -733,7 +1385,7 @@
             <div class="subtitle">33+ компании, создающие интегрированную финансовую экосистему</div>
             
             <div class="ecosystem-container">
-                <div class="ecosystem-center">NEO<br>Pay</div>
+                <div class="ecosystem-center">NEO<br>Stream</div>
                 
                 <!-- Core Financial -->
                 <div class="ecosystem-company" style="top: 5%; left: 15%;">NEO Bit</div>
@@ -1086,9 +1738,9 @@
             </div>
 
             <div style="margin-top: 64px; text-align: center; background: linear-gradient(135deg, #0A2A5A 0%, #1E488F 100%); color: white; padding: 48px; border-radius: 16px;">
-                <h3 style="color: white; font-size: 48px; margin-bottom: 16px;">NEO Pay</h3>
+                <h3 style="color: white; font-size: 48px; margin-bottom: 16px;">NEO Stream</h3>
                 <p style="font-size: 24px; margin-bottom: 32px;">Будущее международных переводов начинается сегодня</p>
-                <p style="font-size: 18px; opacity: 0.9;">Международная система денежных переводов NEO Pay - Объединяем мировые экономики</p>
+                <p style="font-size: 18px; opacity: 0.9;">Международная система денежных переводов NEO Stream - Объединяем мировые экономики</p>
             </div>
         </div>
     </div>
@@ -1099,7 +1751,108 @@
     </div>
 
     <script>
-        // Animation on scroll
+        // Adaptive parameter system
+        function getAdaptiveParams() {
+            const width = window.innerWidth;
+            if (width <= 480) {
+                return {
+                    isMobile: true,
+                    isTablet: false,
+                    isDesktop: false,
+                    animationDelay: '0.1s',
+                    touchOptimized: true,
+                    reducedMotion: true
+                };
+            } else if (width <= 767) {
+                return {
+                    isMobile: false,
+                    isTablet: true,
+                    isDesktop: false,
+                    animationDelay: '0.15s',
+                    touchOptimized: true,
+                    reducedMotion: false
+                };
+            } else if (width <= 1023) {
+                return {
+                    isMobile: false,
+                    isTablet: true,
+                    isDesktop: false,
+                    animationDelay: '0.12s',
+                    touchOptimized: false,
+                    reducedMotion: false
+                };
+            } else {
+                return {
+                    isMobile: false,
+                    isTablet: false,
+                    isDesktop: true,
+                    animationDelay: '0.1s',
+                    touchOptimized: false,
+                    reducedMotion: false
+                };
+            }
+        }
+
+        // Handle responsive behavior
+        function handleResize() {
+            const params = getAdaptiveParams();
+            const slideElements = document.querySelectorAll('.slide');
+            const chartBars = document.querySelectorAll('.chart-bar');
+            const cards = document.querySelectorAll('.card, .stat-card, .info-card');
+            
+            // Adjust animations for mobile
+            if (params.isMobile) {
+                // Reduce number of animated elements on mobile
+                slideElements.forEach((slide, index) => {
+                    if (index > 5) { // Limit animations on mobile
+                        slide.style.animationDelay = '0s';
+                    }
+                });
+                
+                // Adjust chart interactions
+                chartBars.forEach(bar => {
+                    bar.style.pointerEvents = 'auto';
+                });
+            }
+            
+            // Touch optimizations
+            if (params.touchOptimized) {
+                // Add touch feedback
+                document.querySelectorAll('.card, .stat-card, .info-card, .chart-bar').forEach(element => {
+                    element.addEventListener('touchstart', function() {
+                        this.style.transform = 'scale(0.98)';
+                    }, { passive: true });
+                    
+                    element.addEventListener('touchend', function() {
+                        this.style.transform = '';
+                    }, { passive: true });
+                });
+            }
+            
+            // Optimize ecosystem visualization for mobile
+            if (params.isMobile) {
+                const ecosystemContainer = document.querySelector('.ecosystem-container');
+                if (ecosystemContainer) {
+                    // Adjust positioning for smaller screens
+                    document.querySelectorAll('.ecosystem-company').forEach(company => {
+                        const style = window.getComputedStyle(company);
+                        const top = style.top;
+                        const left = style.left;
+                        
+                        // Recalculate positions for better mobile layout
+                        if (parseInt(left) < 20 || parseInt(left) > 80) {
+                            company.style.transform = 'scale(0.8)';
+                        }
+                    });
+                }
+            }
+        }
+
+        // Initialize responsive behavior
+        window.addEventListener('resize', handleResize);
+        window.addEventListener('load', handleResize);
+
+        // Animation on scroll with adaptive options
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -1108,13 +1861,33 @@
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-in');
+                    const params = getAdaptiveParams();
+                    if (!params.reducedMotion) {
+                        entry.target.classList.add('animate-in');
+                    } else {
+                        // Simplified animation for mobile
+                        entry.target.style.opacity = '1';
+                    }
                 }
             });
         }, observerOptions);
 
-        document.querySelectorAll('.slide').forEach(slide => {
-            observer.observe(slide);
+        // Observe slides with adaptive behavior
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.slide');
+            const params = getAdaptiveParams();
+            
+            slides.forEach((slide, index) => {
+                if (params.isMobile && index > 5) {
+                    // Limit initial animations on mobile
+                    slide.style.opacity = '1';
+                } else {
+                    observer.observe(slide);
+                }
+            });
+
+            // Initialize responsive behavior
+            handleResize();
         });
 
         // Navigation functions
@@ -1122,65 +1895,193 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Ecosystem interaction
-        document.querySelectorAll('.ecosystem-company').forEach(company => {
-            company.addEventListener('mouseenter', function() {
-                this.style.transform = 'scale(1.1)';
-            });
+        // Adaptive ecosystem interaction
+        function initEcosystemInteraction() {
+            const params = getAdaptiveParams();
             
-            company.addEventListener('mouseleave', function() {
-                this.style.transform = 'scale(1)';
+            document.querySelectorAll('.ecosystem-company').forEach(company => {
+                if (params.touchOptimized) {
+                    // Touch device interactions
+                    company.addEventListener('touchstart', function(e) {
+                        e.preventDefault();
+                        this.style.transform = 'scale(0.95)';
+                    }, { passive: false });
+                    
+                    company.addEventListener('touchend', function() {
+                        this.style.transform = 'scale(1)';
+                    }, { passive: true });
+                    
+                    company.addEventListener('click', function() {
+                        // Show company info on mobile
+                        this.style.background = '#1E488F';
+                        this.style.color = 'white';
+                        this.style.borderColor = '#1E488F';
+                    });
+                } else {
+                    // Desktop hover effects
+                    company.addEventListener('mouseenter', function() {
+                        this.style.transform = 'scale(1.1)';
+                    });
+                    
+                    company.addEventListener('mouseleave', function() {
+                        this.style.transform = 'scale(1)';
+                    });
+                }
             });
-        });
+        }
 
-        // Staggered animation for cards
-        document.querySelectorAll('.card').forEach((card, index) => {
-            card.style.animationDelay = `${index * 0.1}s`;
-        });
-
-        // Add hover effect to chart bars
-        document.querySelectorAll('.chart-bar').forEach(bar => {
-            bar.addEventListener('mouseenter', function() {
-                this.style.opacity = '0.8';
-            });
+        // Staggered animation for cards with adaptive delays
+        function initCardAnimations() {
+            const params = getAdaptiveParams();
+            const cards = document.querySelectorAll('.card, .stat-card, .info-card');
             
-            bar.addEventListener('mouseleave', function() {
-                this.style.opacity = '1';
+            cards.forEach((card, index) => {
+                if (!params.reducedMotion) {
+                    const delay = parseInt(params.animationDelay.replace('s', '')) * (index % 4);
+                    card.style.animationDelay = `${delay}s`;
+                } else {
+                    // Simplified animation for mobile
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }
             });
-        });
+        }
 
-        // Enhanced navigation with keyboard
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'ArrowDown' || e.key === 'PageDown') {
-                window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
-            } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
-                window.scrollBy({ top: -window.innerHeight, behavior: 'smooth' });
+        // Chart interactions with touch support
+        function initChartInteractions() {
+            const params = getAdaptiveParams();
+            
+            document.querySelectorAll('.chart-bar').forEach(bar => {
+                if (params.touchOptimized) {
+                    // Touch feedback
+                    bar.addEventListener('touchstart', function() {
+                        this.style.transform = 'translateY(-4px)';
+                        this.style.boxShadow = '0 4px 12px rgba(0, 245, 212, 0.3)';
+                    }, { passive: true });
+                    
+                    bar.addEventListener('touchend', function() {
+                        this.style.transform = '';
+                        this.style.boxShadow = '';
+                    }, { passive: true });
+                } else {
+                    // Desktop hover
+                    bar.addEventListener('mouseenter', function() {
+                        this.style.transform = 'translateY(-8px)';
+                        this.style.boxShadow = '0 8px 24px rgba(0, 245, 212, 0.3)';
+                    });
+                    
+                    bar.addEventListener('mouseleave', function() {
+                        this.style.transform = '';
+                        this.style.boxShadow = '';
+                    });
+                }
+            });
+        }
+
+        // Adaptive navigation
+        function initNavigation() {
+            const params = getAdaptiveParams();
+            
+            // Keyboard navigation (disabled on mobile)
+            if (!params.isMobile) {
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'ArrowDown' || e.key === 'PageDown') {
+                        e.preventDefault();
+                        window.scrollBy({ top: window.innerHeight * 0.9, behavior: 'smooth' });
+                    } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
+                        e.preventDefault();
+                        window.scrollBy({ top: -window.innerHeight * 0.9, behavior: 'smooth' });
+                    }
+                });
             }
-        });
+            
+            // Touch swipe navigation for mobile
+            if (params.isMobile) {
+                let touchStartY = 0;
+                let touchEndY = 0;
+                
+                document.addEventListener('touchstart', function(e) {
+                    touchStartY = e.changedTouches[0].screenY;
+                }, { passive: true });
+                
+                document.addEventListener('touchend', function(e) {
+                    touchEndY = e.changedTouches[0].screenY;
+                    handleSwipe();
+                }, { passive: true });
+                
+                function handleSwipe() {
+                    const swipeThreshold = 50;
+                    const diff = touchStartY - touchEndY;
+                    
+                    if (Math.abs(diff) > swipeThreshold) {
+                        if (diff > 0) {
+                            // Swipe up - next slide
+                            window.scrollBy({ top: window.innerHeight * 0.9, behavior: 'smooth' });
+                        } else {
+                            // Swipe down - previous slide
+                            window.scrollBy({ top: -window.innerHeight * 0.9, behavior: 'smooth' });
+                        }
+                    }
+                }
+            }
+        }
 
         // Print optimization
         window.addEventListener('beforeprint', function() {
             document.body.style.background = 'white';
+            // Prepare for print
+            document.querySelectorAll('.slide').forEach(slide => {
+                slide.style.pageBreakAfter = 'always';
+            });
         });
 
         window.addEventListener('afterprint', function() {
             document.body.style.background = '#F7F8FA';
         });
 
-        // Subtle parallax effect for title slide
-        window.addEventListener('scroll', function() {
-            const scrolled = window.pageYOffset;
-            const titleSlide = document.querySelector('.title-slide');
-            if (titleSlide) {
-                const rate = scrolled * -0.5;
-                titleSlide.style.transform = `translateY(${rate}px)`;
+        // Adaptive parallax effect
+        function initParallax() {
+            const params = getAdaptiveParams();
+            
+            if (!params.reducedMotion) {
+                window.addEventListener('scroll', function() {
+                    const scrolled = window.pageYOffset;
+                    const titleSlide = document.querySelector('.title-slide');
+                    if (titleSlide && scrolled < window.innerHeight) {
+                        const rate = scrolled * -0.3;
+                        titleSlide.style.transform = `translateY(${rate}px)`;
+                    }
+                });
             }
+        }
+
+        // Initialize all adaptive features
+        document.addEventListener('DOMContentLoaded', function() {
+            initEcosystemInteraction();
+            initCardAnimations();
+            initChartInteractions();
+            initNavigation();
+            initParallax();
         });
 
-        // Add smooth transition to all interactive elements
-        document.querySelectorAll('.card, .stat-card, .info-card').forEach(element => {
-            element.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
-        });
+        // Performance optimization for mobile
+        if (getAdaptiveParams().isMobile) {
+            // Reduce intersection observer frequency
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-in');
+                    }
+                });
+            }, {
+                rootMargin: '0px 0px -10px 0px',
+                threshold: 0.2
+            });
+
+            document.querySelectorAll('.slide').forEach(slide => {
+                observer.observe(slide);
+            });
+        }
     </script>
 </body>
 </html>
